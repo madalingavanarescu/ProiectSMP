@@ -1,16 +1,17 @@
 ; Cerinte realizate:
 ;
-; - program x86 pe 16 bi?i în EMU8086: 1p
+; - program x86 pe 16 biti in EMU8086: 1p
 ; - SAU grafica simpla 3D: 3p
 ; - sunet: 1p
 ; - comentarii/indentare: 1p (2p pentru programe foarte bine documentate)
-; - utilizare sistem de control al versiunilor (exemplu: mercurial, git): 1p
+; - utilizare sistem de control al versiunilor (exemplu: mercurial, git): 1p 
+; https://github.com/madalingavanarescu/ProiectSMP
 
 
 
 jmp code
-w equ 50 ; dimensiune dreptunghi
-h equ 50
+w equ 50 ; latime ajutatoare
+h equ 50 ; inaltime ajutatoare
 code: mov ah, 0
 mov al, 13h ; trecere in mod grafic 320x200
 int 10h     
