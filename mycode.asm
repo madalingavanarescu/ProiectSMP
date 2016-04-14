@@ -7,15 +7,12 @@
 ; - utilizare sistem de control al versiunilor (exemplu: mercurial, git): 1p 
 ; https://github.com/madalingavanarescu/ProiectSMP
 
-
-
 jmp code
-w equ 50 ; latime ajutatoare
-h equ 50 ; inaltime ajutatoare
+w equ 50            ; latime ajutatoare
+h equ 50            ; inaltime ajutatoare
 code: mov ah, 0
-mov al, 13h ; trecere in mod grafic 320x200
+mov al, 13h         ; trecere in mod grafic 320x200
 int 10h     
-
 
 ; afisare latura superioara fata casa
 mov cx, 100+w       ; coloana
@@ -37,7 +34,7 @@ dec cx             ; decrementare coloana
 cmp cx, 100        ; pana cand index-ul curent al coloanei e 100
 ja u2
 
-; latura din stanga fata casa
+; afisare latura din stanga fata casa
 mov cx, 100        ; coloana
 mov dx, 100+h      ; rand
 mov al, 9          ; albastru
@@ -47,7 +44,7 @@ dec dx             ; decrementare rand
 cmp dx, 100        ; pana cand index-ul curent al randului e 100
 ja u3   
 
-; latura din dreapta fata casa
+; afisare latura din dreapta fata casa
 mov cx, 100+w      ; coloana
 mov dx, 100+h      ; rand
 mov al, 9          ; albastru
@@ -57,7 +54,7 @@ dec dx             ; decrementare rand
 cmp dx, 100        ; pana cand index-ul curent al randului e 100
 ja u4   
 
-; latura diagonala dreapta lateral casa
+; afisare latura diagonala dreapta lateral casa
 mov cx, 100+w      ; coloana
 mov dx, 100+h      ; rand
 mov al, 9          ; albastru
@@ -68,7 +65,7 @@ inc cx             ; incrementare coloana
 cmp dx, 125        ; pana cand index-ul curent al randului e 125
 ja u5
 
-; latura verticala dreapta spate lateral casa
+; afisare latura verticala dreapta spate lateral casa
 mov cx, 175        ; coloana
 mov dx, 125        ; rand
 mov al, 9          ; albastru
@@ -78,7 +75,7 @@ dec dx             ; decrementare rand
 cmp dx, 75         ; pana cand index-ul curent al randului e 75
 ja u6
 
-; latura diagonala dreapta 3d plafon
+; afisare latura diagonala dreapta 3d plafon
 mov cx, 100+w      ; coloana
 mov dx, 100        ; rand
 mov al, 9          ; albastru
@@ -89,7 +86,7 @@ inc cx             ; incrementare coloana
 cmp dx, 75         ; pana cand index-ul curent al randului e 75
 ja u7
 
-; latura diagonala stanga 3d plafon
+; afisare latura diagonala stanga 3d plafon
 mov cx, 100        ; coloana
 mov dx, 100        ; rand
 mov al, 9          ; albastru
@@ -110,7 +107,7 @@ dec cx              ; decrementare coloana
 cmp cx, 125         ; pana cand index-ul curent al coloanei e 125
 jae u9                           
 
-; latura diagonala din dreapta fata acoperis
+; afisare latura diagonala din dreapta fata acoperis
 mov cx, 100+w       ; coloana
 mov dx, 100         ; rand
 mov al, 10          ; verde
@@ -123,7 +120,7 @@ cmp dx, 50          ; pana cand index-ul curent al randului e 50
 ja u10    
 
 
-; latura diagonala din stanga fata acoperis
+; afisare latura diagonala din stanga fata acoperis
 mov cx, 100         ; coloana
 mov dx, 100         ; rand
 mov al, 10          ; verde
@@ -135,7 +132,7 @@ inc cx              ; decrementare coloana
 cmp dx, 50          ; pana cand index-ul curent al randului e 50
 ja u11
 
-; latura diagonala din dreapta spate acoperis
+; afisare latura diagonala din dreapta spate acoperis
 mov cx, 175         ; coloana
 mov dx, 75          ; rand
 mov al, 10          ; verde
@@ -147,7 +144,7 @@ dec cx              ; decrementare coloana
 cmp dx, 50          ; pana cand index-ul curent al randului e 50
 ja u12        
 
-; latura din stanga spate acoperis
+; afisare latura din stanga spate acoperis
 mov cx, 125         ; coloana
 mov dx, 75          ; rand
 mov al, 10          ; verde
@@ -157,7 +154,7 @@ dec dx              ; decrementare rand
 cmp dx, 50          ; pana cand index-ul curent al randului e 50
 ja u13
 
-; latura din stanga usa
+; afisare latura din stanga usa
 mov cx, 120         ; coloana
 mov dx, 150         ; rand
 mov al, 5           ; violet
@@ -167,7 +164,7 @@ dec dx              ; decrementare rand
 cmp dx, 130         ; pana cand index-ul curent al randului e 130
 ja u14   
  
-; latura din dreapta usa
+; afisare latura din dreapta usa
 mov cx, 130         ; coloana
 mov dx, 150         ; rand
 mov al, 5           ; violet
@@ -197,7 +194,7 @@ dec cx              ; decrementare coloana
 cmp cx, 120         ; pana cand index-ul curent al coloanei e 120
 jae u17  
 
-; latura verticala clanta
+; afisare latura verticala clanta
 mov cx, 124         ; coloana
 mov dx, 144         ; rand
 mov al, 15          ; alb
@@ -207,7 +204,7 @@ dec dx              ; decrementare rand
 cmp dx, 140         ; pana cand index-ul curent al randului e 140
 ja u18
 
-; latura diagonala stanga podea
+; afisare latura diagonala stanga podea
 mov cx, 100         ; coloana
 mov dx, 100+h       ; rand
 mov al, 9           ; albastru
@@ -218,7 +215,7 @@ inc cx              ; incrementare coloana
 cmp dx, 125         ; pana cand index-ul curent al randului e 125
 ja u19
                              
-; latura verticala stanga spate casa 
+; afisare latura verticala stanga spate casa 
 mov cx, 125         ; coloana
 mov dx, 125         ; rand
 mov al, 9           ; albastru
@@ -238,10 +235,10 @@ dec cx              ; afisare coloana
 cmp cx, 125         ; pana cand index-ul curent al coloanei e 125
 jae u22                          
 
-; sunet
-mov dl, 07h
+; redare sunet
+mov dl, 07h         ; beep
 mov ah, 2 
-int 21h             ;produce sunetul
+int 21h             ; reda sunetul
 
 ; asteptare apasare tasta 
 mov ah,00 
